@@ -3,41 +3,76 @@
 @tailwind utilities;
 
 :root {
-<<<<<<< HEAD
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-=======
-  --background: #ffffff;
+  --background: #fff;
   --foreground: #171717;
->>>>>>> ad647d5c2ecdc7d3aa6997b830f6c8e14a19b54f
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-<<<<<<< HEAD
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-=======
-    --background: #0a0a0a;
+    --background: #111010;
     --foreground: #ededed;
->>>>>>> ad647d5c2ecdc7d3aa6997b830f6c8e14a19b54f
   }
 }
 
 body {
-<<<<<<< HEAD
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-=======
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
->>>>>>> ad647d5c2ecdc7d3aa6997b830f6c8e14a19b54f
+}
+
+/* Custom Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+  height: 1px;
+}
+
+::-webkit-scrollbar-track {
+  background: #b9b9be;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #77777b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #43434b;
+}
+
+/* View Transitions */
+::view-transition-group(root) {
+  animation-timing-function: var(--expo-in);
+}
+
+::view-transition-new(root) {
+  mask: url(/assets/theL.gif) center/cover no-repeat;
+  animation: scale 1.5s;
+}
+
+.dark::view-transition-old(root),
+::view-transition-old(root) {
+  animation: scale 1.5s;
+}
+
+@keyframes scale {
+  0% {
+    mask-size: 0;
+  }
+  10% {
+    mask-size: 40vmax;
+  }
+  90% {
+    mask-size: 40vmax;
+  }
+  to {
+    mask-size: 2000vmax;
+  }
 }

@@ -1,40 +1,36 @@
-<<<<<<< HEAD
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
+  darkMode: ['class'],
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-=======
-import type { Config } from "tailwindcss";
-
-export default {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
+    container: {
+      center: true,
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
->>>>>>> ad647d5c2ecdc7d3aa6997b830f6c8e14a19b54f
+        'dark-1': '#111010',
+        'dark-3': '#27272A',
+        'dark-4': '#1F1F22',
+        'dark-5': '#D4D4D8',
+      },
+      fontFamily: {
+        spaceGrotesk: ['var(--font-spaceGrotesk)'],
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
     },
   },
   plugins: [],
-<<<<<<< HEAD
-}
-export default config
-=======
-} satisfies Config;
->>>>>>> ad647d5c2ecdc7d3aa6997b830f6c8e14a19b54f
+} as Config;
+
+export default config;
