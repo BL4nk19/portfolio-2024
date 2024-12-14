@@ -12,12 +12,47 @@
     --background: #111010;
     --foreground: #ededed;
   }
+
+  body {
+    background: black;
+  }
+
+  .dark-mode-background {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: black;
+  }
+
+  .dark-mode-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(79, 79, 79, 0.18) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(128, 128, 128, 0.04) 1px, transparent 1px);
+    background-size: 14px 24px;
+  }
+
+  .dark-mode-background::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10%;
+    height: 1000px;
+    width: 1000px;
+    border-radius: 50%;
+    background: radial-gradient(circle 400px at 50% 300px, rgba(251, 251, 251, 0.21), transparent);
+  }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-spaceGrotesk), Arial, sans-serif;
 }
 
 /* Custom Scrollbar */
@@ -77,3 +112,68 @@ body {
   }
 }
 
+@media (max-width: 1440px) {
+  @keyframes scale {
+    10% {
+      mask-size: 55vmax;
+    }
+    90% {
+      mask-size: 55vmax;
+    }
+    to {
+      mask-size: 2000vmax;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  @keyframes scale {
+    10% {
+      mask-size: 65vmax;
+    }
+    90% {
+      mask-size: 65vmax;
+    }
+    to {
+      mask-size: 2000vmax;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  @keyframes scale {
+    10% {
+      mask-size: 75vmax;
+    }
+    90% {
+      mask-size: 75vmax;
+    }
+    to {
+      mask-size: 2000vmax;
+    }
+  }
+}
+
+/* Dark mode background pattern */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111010;
+    --foreground: #ededed;
+  }
+
+  .dark-background-pattern {
+    position: relative;
+    background-color: #111010;
+    background-image: linear-gradient(to right, rgba(79, 79, 79, 0.18) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(128, 128, 128, 0.04) 1px, transparent 1px);
+    background-size: 14px 24px;
+  }
+
+  .dark-background-pattern::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle 800px at 50% 50%, rgba(251, 251, 251, 0.05), transparent);
+    pointer-events: none;
+  }
+}
