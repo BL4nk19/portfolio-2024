@@ -9,9 +9,8 @@ export const ProfileCard = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [previousIndex, setPreviousIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const texts = ['for Mobile', 'for Web', 'all Products'];
+  const texts = ['for Web', 'for Mobile', 'all Products'];
 
-  // Update time every second
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date());
@@ -19,7 +18,6 @@ export const ProfileCard = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Text rotation effect with dissolve transition
   useEffect(() => {
     const interval = setInterval(() => {
       setIsTransitioning(true);
@@ -28,12 +26,11 @@ export const ProfileCard = () => {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
         setIsTransitioning(false);
-      }, 500);
-    }, 2000);
+      }, 800);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [currentIndex]);
-  
 
   const formattedDateTime = currentTime.toLocaleString('en-US', {
     hour: 'numeric',
@@ -51,7 +48,7 @@ export const ProfileCard = () => {
   });
 
   return (
-    <div className="relative flex w-full rounded-xl border dark:border-dark-5 border-dark-3 transform-gpu bg-dark-1 [box-shadow:0_0px_60px_-20px_#ffffff1f_inset] cursor-grab dark:bg-white sm:col-start-3 sm:col-end-7 sm:row-start-1 sm:row-end-3 z-10">
+    <div className="relative flex w-full rounded-xl border border-zinc-800/10 dark:border-zinc-300/10 transform-gpu bg-dark-1 cursor-grab dark:bg-white">
       <div className="w-full h-full">
         <div className="flex flex-col overflow-hidden size-full relative z-10 p-5 items-start justify-start gap-8 max-sm:h-[275px] max-sm:gap-4 dark:text-dark-4 text-white">
           {/* Header: Profile and Theme Toggle */}
@@ -66,47 +63,45 @@ export const ProfileCard = () => {
                 priority
               />
               <div>
-                <p className="font-bold text-lg">Josh.</p>
-                <p className="text-md font-mono dark:text-black/70 text-zinc-400/80">@Vilensky</p>
+                <p className="font-bold text-lg">Josh</p>
+                <p className="text-md font-mono dark:text-black/70 text-zinc-400/80">Vilensky</p>
               </div>
             </div>
             <ThemeToggle />
           </div>
 
-          {/* Bio Section */}
-          <div className="flex flex-col gap-1 overflow-hidden">
-            <div className="font-bold w-full flex items-center justify-start gap-1">
-              <p className="inline text-lg">I Design</p>
-              <div className="flex items-center min-w-[5.5rem] h-[1.125rem] relative">
-                <div className="relative w-full">
-                  {/* Current text */}
+          {/* Bio Section with Enhanced Animation */}
+          <div className="flex flex-col gap-1">
+            <div className="flex items-start">
+              <h2 className="text-[1.125rem] leading-none font-bold flex">
+                <span>I Design</span>
+                <span className="relative inline-block ml-2" style={{ minWidth: '120px', height: '1.125rem' }}>
                   <span 
-                    className="absolute w-full text-lg leading-none text-center font-sans font-bold transition-all duration-500"
+                    className="absolute top-0 left-0 whitespace-nowrap transition-all duration-700 ease-in-out"
                     style={{
                       opacity: isTransitioning ? 0 : 1,
-                      filter: 'blur(0.6px)',
-                      transform: 'translateY(0)',
+                      filter: `blur(${isTransitioning ? '4px' : '0px'})`,
+                      transform: `scale(${isTransitioning ? 0.97 : 1})`,
                     }}
                   >
                     {texts[currentIndex]}
+                    <span className="ml-[1px]">.</span>
                   </span>
-                  
-                  {/* Previous text for transition */}
                   <span 
-                    className="absolute w-full text-lg leading-none text-center font-sans font-bold transition-all duration-500"
+                    className="absolute top-0 left-0 whitespace-nowrap transition-all duration-700 ease-in-out"
                     style={{
                       opacity: isTransitioning ? 1 : 0,
-                      filter: 'blur(0.6px)',
-                      transform: 'translateY(0)',
+                      filter: `blur(${isTransitioning ? '0px' : '4px'})`,
+                      transform: `scale(${isTransitioning ? 1 : 0.97})`,
                     }}
                   >
                     {texts[previousIndex]}
+                    <span className="ml-[1px]">.</span>
                   </span>
-                </div>
-                <span className="text-lg ml-1">.</span>
-              </div>
+                </span>
+              </h2>
             </div>
-            <div className="w-full">
+            <div className="w-full mt-2">
               <p className="text-sm">Hello, I'm Josh! A Product designer and aspiring design engineer, focused on building exceptional digital experiences.</p>
             </div>
           </div>
@@ -134,10 +129,8 @@ export const ProfileCard = () => {
           </div>
         </div>
       </div>
-
-      {/* Hover Effects */}
-      <div className="pointer-events-none h-0 absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100" />
-      <div className="pointer-events-none h-0 absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-neutral-800/10" />
     </div>
   );
 };
+
+export default ProfileCard;
