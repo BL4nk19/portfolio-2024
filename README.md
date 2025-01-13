@@ -7,7 +7,7 @@
 
 ## 🖼️ Preview
 
-This project is a **live portfolio** built with **Next.js**, **Tailwind CSS**, and **Radix UI**. It reflects my ongoing journey to improve my development skills while applying my designer mindset to create aesthetically pleasing, interactive experiences.
+This project is a **live portfolio** built with **Next.js**, **Tailwind CSS**, and **Radix UI**. It reflects my ongoing journey to explore development skills while applying my designer mindset to create aesthetically pleasing, interactive experiences.
 
 ---
 
@@ -35,7 +35,7 @@ This project is a **live portfolio** built with **Next.js**, **Tailwind CSS**, a
 
 ## 🚧 Status: Work in Progress
 
-This project is a continuous work in progress, aimed at honing my front-end development skills. As a designer transitioning into dev work, I am committed to learning by doing — improving with every commit.
+This project is a continuous work in progress, aimed at learning front-end development skills. As a designer transitioning into dev work, I am committed to learning by doing — improving with every commit.
 
 ---
 
