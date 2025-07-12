@@ -2,12 +2,13 @@
 import { AnimatedBackground } from './components/ui/AnimatedBackground';
 import { ProfileCard } from './components/ui/ProfileCard';
 import { TechStackCard } from './components/ui/TechStackCard';
+import { SocialLinksCard } from './components/ui/SocialLinksCard';
 
 export default function Home() {
-  const containerClasses = "relative flex w-full rounded-xl border dark:border-dark-5/50 border-dark-3/50 transform-gpu bg-dark-1 [box-shadow:0_0px_60px_-20px_#ffffff1f_inset] cursor-grab dark:bg-white";
+  const containerClasses = "relative flex w-full rounded-xl border border-dark-3/50 dark:border-dark-5/50 transform-gpu bg-white dark:bg-dark-1 [box-shadow:0_0px_60px_-20px_#ffffff1f_inset] cursor-grab";
 
   return (
-    <main className="min-h-screen flex items-center justify-center relative mx-auto max-w-5xl bg-dark-1 dark:bg-white font-spaceGrotesk">
+    <main className="min-h-screen flex items-center justify-center relative mx-auto max-w-5xl bg-white dark:bg-dark-1 font-spaceGrotesk">
       {/* Background Pattern */}
       <AnimatedBackground />
       
@@ -30,8 +31,8 @@ export default function Home() {
           </div>
 
           {/* Social Links */}
-          <div className={`${containerClasses} sm:col-start-7 sm:col-end-9 sm:row-start-1 sm:row-end-2 z-[7]`}>
-            {/* Social links will go here */}
+          <div className={`${containerClasses} sm:col-start-7 sm:col-end-9 sm:row-start-1 sm:row-end-2 z-[7] border-none bg-transparent [box-shadow:0_0px_0px_-0px_#ffffff1f_inset] dark:[box-shadow:0_0px_0px_-0px_#ffffff1f_inset] dark:bg-transparent`}>
+            <SocialLinksCard />
           </div>
 
           {/* Project Card */}

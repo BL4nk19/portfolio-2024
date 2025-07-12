@@ -48,9 +48,9 @@ export const ProfileCard = () => {
   });
 
   return (
-    <div className="relative flex w-full rounded-xl border border-zinc-800/10 dark:border-zinc-300/10 transform-gpu bg-dark-1 cursor-grab dark:bg-white">
+    <div className="relative flex w-full rounded-xl border border-zinc-300/10 dark:border-zinc-800/10 transform-gpu bg-white dark:bg-dark-1 cursor-grab">
       <div className="w-full h-full">
-        <div className="flex flex-col overflow-hidden size-full relative z-10 p-5 items-start justify-start gap-8 max-sm:h-[275px] max-sm:gap-4 dark:text-dark-4 text-white">
+        <div className="flex flex-col overflow-hidden size-full relative z-10 p-5 items-start justify-start gap-8 max-sm:h-[275px] max-sm:gap-4 text-black dark:text-white">
           {/* Header: Profile and Theme Toggle */}
           <div className="w-full flex justify-between items-start">
             <div className="flex gap-3">
@@ -63,8 +63,8 @@ export const ProfileCard = () => {
                 priority
               />
               <div>
-                <p className="font-bold text-lg">Josh</p>
-                <p className="text-md font-mono dark:text-black/70 text-zinc-400/80">Vilensky</p>
+                <p className="font-bold text-lg text-black dark:text-white">Josh</p>
+                <p className="text-md font-mono text-zinc-700 dark:text-zinc-300">Vilensky</p>
               </div>
             </div>
             <ThemeToggle />
@@ -102,18 +102,18 @@ export const ProfileCard = () => {
               </h2>
             </div>
             <div className="w-full mt-2">
-              <p className="text-sm">Hello, I'm Josh! A Product designer and aspiring design engineer, focused on building exceptional digital experiences.</p>
+              <p className="text-sm text-zinc-700 dark:text-zinc-300">Hello, I'm Josh! A Product designer and aspiring design engineer, focused on building exceptional digital experiences.</p>
             </div>
           </div>
 
           {/* Status & Time */}
           <div className="absolute bottom-5 right-8">
-            <div className="font-mono flex justify-end items-center gap-1 text-sm text-zinc-400 dark:text-black/70">
+            <div className="font-mono flex justify-end items-center gap-1 text-sm text-zinc-700 dark:text-zinc-300">
               <div className="w-2 h-2 rounded-full bg-[#00ff00]" />
               <p className="text-xs">Available for work</p>
             </div>
             <div className="flex items-center justify-end gap-1 mt-1">
-              <time className="text-xs font-light text-zinc-500 font-mono tabular-nums tracking-wider">
+              <time className="text-xs font-light text-zinc-500 dark:text-zinc-300 font-mono tabular-nums tracking-wider">
                 {formattedDate}, {formattedDateTime} <span className="text-base">🇿🇦</span>
               </time>
             </div>
@@ -122,7 +122,7 @@ export const ProfileCard = () => {
           {/* Quote */}
           <div className="absolute bottom-5 left-5 max-sm:hidden">
             <div className="w-full">
-              <p className="text-xs font-mono dark:text-black/70 text-zinc-400/70">
+              <p className="text-xs font-mono text-zinc-500 dark:text-zinc-300">
                 "How do I detach<br />a component again??"
               </p>
             </div>

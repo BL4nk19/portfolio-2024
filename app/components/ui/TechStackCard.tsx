@@ -5,14 +5,15 @@ import React from 'react';
 
 export const TechStackCard = () => {
   const TechItem = ({ label }: { label: string }) => (
-    <div className="px-1.5 text-xs dark:text-black font-normal border dark:border-dark-5/50 border-zinc-800/50 line-clamp-1 overflow-hidden w-max rounded-sm size-max hover:border-white/50 dark:hover:border-dark-4 transition-all font-extralight hover:text-white">
+    <div className="px-1.5 text-xs text-zinc-700 dark:text-zinc-300 font-normal border border-zinc-800/50 dark:border-dark-5/50 line-clamp-1 overflow-hidden w-max rounded-md size-max transition-all
+      hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-neutral-200/80 dark:hover:bg-neutral-800/40">
       {label}
     </div>
   );
 
   return (
     <div className="w-full">
-      <div className="flex flex-col px-1 justify-start relative w-full group dark:text-dark-4">
+      <div className="flex flex-col px-1 justify-start relative w-full group text-black dark:text-white">
         <div className="h-max">
           <div className="flex">
             <p className="text-4xl pt-5 px-2.5 font-bold">{"{"}</p>
@@ -26,9 +27,9 @@ export const TechStackCard = () => {
           </h1>
         </div>
 
-        <div className="w-full grid grid-cols-1 text-zinc-200/80 p-3 gap-4">
+        <div className="w-full grid grid-cols-1 text-zinc-700 dark:text-zinc-300 p-3 gap-4">
           <section className="flex flex-col gap-1.5">
-            <p className="text-white dark:text-dark-1 text-sm">Daily Drivers:</p>
+            <p className="text-black dark:text-white text-sm">Daily Drivers:</p>
             <div className="flex flex-wrap gap-1.5">
               <TechItem label="Figma" />
               <TechItem label="Miro" />
@@ -38,7 +39,7 @@ export const TechStackCard = () => {
           </section>
 
           <section className="flex flex-col gap-1.5">
-            <p className="text-white dark:text-dark-1 text-sm">Key Skills:</p>
+            <p className="text-black dark:text-white text-sm">Key Skills:</p>
             <div className="flex flex-wrap gap-1.5">
               <TechItem label="End-to-end design" />
               <TechItem label="IA mapping" />
@@ -49,7 +50,7 @@ export const TechStackCard = () => {
           </section>
 
           <section className="flex flex-col gap-1.5">
-            <p className="text-white dark:text-dark-1 text-sm">Development Tools:</p>
+            <p className="text-black dark:text-white text-sm">Development Tools:</p>
             <div className="flex flex-wrap gap-1.5">
               <TechItem label="Next.js" />
               <TechItem label="HTML" />
@@ -60,7 +61,7 @@ export const TechStackCard = () => {
           </section>
 
           <section className="flex flex-col gap-1.5">
-            <p className="text-white dark:text-dark-1 text-sm">Currently Exploring:</p>
+            <p className="text-black dark:text-white text-sm">Currently Exploring:</p>
             <div className="flex flex-wrap gap-1.5">
               <TechItem label="React" />
               <TechItem label="Flutter" />
@@ -68,7 +69,7 @@ export const TechStackCard = () => {
           </section>
 
           <section className="flex flex-col gap-1.5">
-            <p className="text-white dark:text-dark-1 text-sm">Recent Certifications:</p>
+            <p className="text-black dark:text-white text-sm">Recent Certifications:</p>
             <div className="flex flex-wrap gap-1.5">
               <TechItem label="Harvard CS50" />
               <TechItem label="Uxcel" />

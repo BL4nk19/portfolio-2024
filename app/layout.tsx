@@ -27,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${spaceGrotesk.variable} bg-dark-1 dark:bg-white`}>
+      <body className={`${spaceGrotesk.variable} bg-white dark:bg-dark-1`}>
         <ThemeProvider attribute="class" defaultTheme="dark">
           {children}
         </ThemeProvider>
